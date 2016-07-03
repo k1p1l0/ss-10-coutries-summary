@@ -1,0 +1,1 @@
+tpl['desc'] = '<h1>:name</h1><p>Capital: :capital</p><p>Languages: :languages</p><p>Population: :population</p><p>Time zone: :time_zone';

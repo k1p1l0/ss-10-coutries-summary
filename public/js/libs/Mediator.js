@@ -1,15 +1,33 @@
-function Mediator () {
-	var listeners = [];
+'use strict';
 
-	this.trigger = function () {
-		listeners.forEach(function (fn) {
-			fn();
-		});
-	};
+var Mediator = ( () => {
+    function Mediator() {
+        this.channels = {};
 
-	this.addEventListener = function (fn) {
-		listeners.push(fn);
-	};
+        return this;
+    }
 
-	return this;
-}
+    Mediator.prototype.sub = function mediatorSubscribe (channel, callback) {
+        if (!this.channels.hasOwnProperty(channel)) {
+            this.channels[channel] = [];
+        }
+
+        this.channels[channel].push(callback);
+
+        return true;
+    };
+
+    Mediator.prototype.pub = function mediatorPublish (channel, value) {
+        if (!this.channels.hasOwnProperty(channel) ) {
+            return false;
+        }
+
+        this.channels[channel].forEach(function (subscriber) {
+            subscriber(value);
+        });
+
+        return true;
+    };
+
+    return Mediator;
+})();

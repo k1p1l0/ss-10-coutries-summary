@@ -5429,7 +5429,6 @@ jQuery.each( {
 jQuery.fn.extend( {
 
 	on: function( types, selector, data, fn ) {
-		console.log('on call');
 		return on( this, types, selector, data, fn );
 	},
 	one: function( types, selector, data, fn ) {
