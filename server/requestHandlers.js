@@ -1,5 +1,4 @@
 var fs = require('fs'),
-    querystring = require('querystring'),
     static = require('./libs/static'),
     db = require('./libs/db');
 
@@ -36,5 +35,3 @@ exports.getCountries = getCountries;
 exports.getFile = getFile;
 
 exports.upload = upload;
-
-// exports.getTime = getTime;

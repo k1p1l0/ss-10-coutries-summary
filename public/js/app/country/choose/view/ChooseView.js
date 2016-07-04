@@ -4,7 +4,7 @@ function ChooseView ({$container, model, fn}) {
 	$('body').append(this.loader());
 
 	model.sub(() => {
-		// BUG: Утечка памяти. Отвязать нужно.
+		// NOTE: Memory leak
 		$container.html(createList()); 
 
 		$('.loader').hide();
@@ -19,14 +19,12 @@ function ChooseView ({$container, model, fn}) {
 		var $body = $('<ul></ul>');
 
 		model.forEach((country) => {
-			$body.append(createOneList(tpl['listBody'], country, addListener));
+			$body.append(createOneList(tpl['listBody'], country, () => {
+				med.pub('click', country);
+			}));
 		});		
 
 		return $body;
-	}
-
-	function addListener (event) {
-		med.pub('click', country);
 	}
 
 	function createOneList (tpl, keys, fn) {

@@ -8,6 +8,7 @@ handle['/'] = '/index.html';
 
 // Request for data (array, time) API
 
+handle['/show'] = requestHandlers.show;
 handle['/upload'] = requestHandlers.upload;
 
 handle['/get'] = requestHandlers.getCountries;

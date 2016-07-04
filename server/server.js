@@ -10,8 +10,8 @@ function start (route, handle) {
 
   	request.addListener("data", function(postDataChunk) {
       postData += postDataChunk;
-      
-      console.log("Received POST data chunk '"+
+
+      console.log("Received POST'"+
       postData + "'.");
     });
 

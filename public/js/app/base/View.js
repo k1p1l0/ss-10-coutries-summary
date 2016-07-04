@@ -3,6 +3,15 @@ function View () {
 }
 
 View.prototype.loader = function RenderLoader() {
-	return template(tpl['loader'], {'first':'Soft', 'second':'Serve'});
+	let key = {
+			'first': 'Soft',
+			'second': 'Serve'
+		}
+
+	if (DEBUG) {
+		key['debug'] = 'DEBUG';
+	}
+
+	return template(tpl['loader'], key);
 }
 

@@ -68,13 +68,19 @@ body {
 }
 
 #country-choose ul li a {
-	text-transform: uppercase;
+	  text-transform: uppercase;
     display: block;
     padding: 20px 25px;
     color: #0088cc;
     border-bottom: 1px solid #e5e5e5;
     margin-bottom: -1px;
     text-decoration: none;
+}
+
+button {
+  display: block;
+  padding: 20px 25px;
+  width: 100%;
 }
 
 #country-choose ul li:hover a {
@@ -108,7 +114,7 @@ body {
 
 /* COUNTRY-ADD START*/
 #country-add {
-	min-width: 350px;
+	width: 350px;
 	border-left: 1px solid #e5e5e5;
 	box-sizing: border-box;
 }
@@ -122,11 +128,11 @@ body {
 
 #country-add table {
     border-collapse: collapse;
-    width: 100%;
 }
 
 #country-add td {
     padding: 10px 15px;
+    box-sizing: border-box;
 }
 
 #country-add input[type="text"] {
@@ -147,4 +153,14 @@ body {
             transform: scale(0.8);
     opacity: 0.5;
   }
+}
+
+.hidden {
+  display: none;
+}
+
+.link {
+  float: right;
+  text-decoration: underline;
+  color: #0088cc;
 }
